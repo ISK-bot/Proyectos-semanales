@@ -14,7 +14,6 @@ public class Proyecto1_1 {             // Nombre del proyecto = Proyecto_1_1
         System.out.println("Eres mayor de edad");
         else
         System.out.println("Aún eres joven");
-        System.out.println(" ");
         
         System.out.print("Hola, mi nombre es " + nombre + ", ");        //Yo soy Y
         System.out.print("tengo " + edad + " años");                    // Tengo X años
