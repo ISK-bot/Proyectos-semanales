@@ -1,7 +1,7 @@
 // Hoy hemos dado operaciones básicas (variables y operadores). 
 import java.util.Scanner;
 
-public class Main {             // Nombre del proyecto = Proyecto_1_1
+public class Proyecto1_1 {             // Nombre del proyecto = Proyecto_1_1
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);        //Creo un nuevo Scan, que escanea el periferico de entrada (el teclado)
 
