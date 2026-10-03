@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Proyecto_1 {
+public class Proyecto1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);        //Creo un nuevo Scan, que escanea el periferico de entrada (el teclado)
 
