@@ -9,7 +9,8 @@ public class Proyecto2 {
         Scanner sc = new Scanner(System.in);
         int Pin1 = sc.nextInt();
         int Pin2 = sc.nextInt();
-        boolean igual = (Pin1 == Pin2);
+        int numero_de_intentos = 3:
+        boolean Pin_igual = (Pin1 == Pin2);
         System.out.println("Ingresa tu PIN: " + Pin1);
         System.out.println("Vuelve a ingresar tu pin: " + Pin2);
 
@@ -17,10 +18,18 @@ public class Proyecto2 {
         System.out.println("Pin registrado");
         }
         else {
-            System.out.println("El Pin no es igual");
+            numero_de_intentos = numero_de_intentos - 1;
+            System.out.println("El Pin no es igual");  
+            System.out.println("Te quedan " + numero_de_intentos + "intentos");
         }
 
-
+        if numero_de_intentos = 0 {
+           System.out.println("Te has quedado sin intentos ");
+            sc.close();
+        }
+        else {
+        System.out.println("Te quedan " + numero_de_intentos + "intentos");
+        }
 
     }
 
