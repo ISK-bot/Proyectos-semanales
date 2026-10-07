@@ -7,8 +7,10 @@ import java.util.Scanner;
 public class Proyecto2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int Pin1 = sc.nextInt();
-        int Pin2 = sc.nextInt();
+        int Pin1;
+        Pin1 = sc.nextInt();
+        int Pin2;
+        Pin2 = sc.nextInt();
         int numero_de_intentos = 3:
         boolean Pin_igual = (Pin1 == Pin2);
         System.out.println("Ingresa tu PIN: " + Pin1);
@@ -16,11 +18,15 @@ public class Proyecto2 {
 
         if (Pin1 == Pin2) {
         System.out.println("Pin registrado");
+            sc.close();
         }
         else {
             numero_de_intentos = numero_de_intentos - 1;
             System.out.println("El Pin no es igual");  
             System.out.println("Te quedan " + numero_de_intentos + "intentos");
+        Scanner
+
+            
         }
 
         if numero_de_intentos = 0 {
