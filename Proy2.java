@@ -1,5 +1,6 @@
 /* Ya es momento de crear un codigo funcional, que tenga una función.
-El objetivo de este proyecto es poder 
+Mi objetivo es poder hacer algo parecido a los cajeros automáticos, con validación
+de PIN.
 */
 
 import java.util.Scanner;
@@ -29,8 +30,7 @@ public class Proy2 /*Proyecto2.java*/{
             Pin1 = sc.nextInt();
             System.out.println("Vuelve a ingresar tu pin: ");
             Pin2 = sc.nextInt();
-            
-            
+            //Aqui faltan cosas,
         }
 
         if (numero_de_intentos == 0) {
