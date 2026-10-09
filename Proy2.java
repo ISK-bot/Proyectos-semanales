@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class Proy2 /*Proyecto2.java*/{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Ingresa tu DNI: ");
+        int DNI = sc.nextInt();
+        sc.nextLine;
+        String letra_DNI = sc.nextLine();
         System.out.println("Ingresa tu PIN: ");
         int Pin1;
         Pin1 = sc.nextInt();
