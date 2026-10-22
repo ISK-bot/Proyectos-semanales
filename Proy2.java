@@ -12,11 +12,11 @@ public class Proy2 /*Proyecto2.java*/ {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingresa tu DNI(numeros): ");       // Deberemos ingresar los numeros de nuestro DNI. - Falta especificar el límite de caracteres de la entrada por teclado
-        int DNI = sc.nextInt();
+        int DNI = sc.nextInt().length(7);                   // Definimos la cantidad de "texto" que queremos que tenga la variable DNI
         sc.nextLine();                                      // Limpiamos el buffer (con un salto de linea).
 
         System.out.print("Ingresa la letra del DNI: ");     // Deberemos ingresar la letra de nuestro DNI.
-        String letra_DNI = sc.next();
+        char letra_DNI = sc.next().charAt(0);
         System.out.println("Ingresa tu PIN: ");             // Ingresamos el PIN que usaremos.
         int Pin1;
         Pin1 = sc.nextInt();
@@ -39,3 +39,7 @@ public class Proy2 /*Proyecto2.java*/ {
     }
 
 }
+
+
+// Meter un do-while, y un math.random * -100000 hasta 100000. para que si eatas en negativo, salga estas en bancarota.
+// Sino un switch para decir, marca uno si es negativo marca 1 si es positivo. Si coinciden los valores negativo negativo sigue adelante, sino pues dice " mentiroso, sere una maquina pero no soy tonto".
