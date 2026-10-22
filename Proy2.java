@@ -12,7 +12,7 @@ public class Proy2 /*Proyecto2.java*/ {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingresa tu DNI(numeros): ");       // Deberemos ingresar los numeros de nuestro DNI. - Falta especificar el límite de caracteres de la entrada por teclado
-        int DNI = sc.nextInt();
+        int DNI = sc.nextInt().substring(0,6);
         sc.nextLine();                                      // Limpiamos el buffer (con un salto de linea).
 
         System.out.print("Ingresa la letra del DNI: ");     // Deberemos ingresar la letra de nuestro DNI.
