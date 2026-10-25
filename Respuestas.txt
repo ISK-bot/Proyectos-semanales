@@ -1,0 +1,45 @@
+1. BLOQUE DO-WHILE
+
+Lo que estamos haciendo con el bucle do-while es que pida el pin si aún quedan intentos y si los pines no son iguales.
+El bucle do-while funciona así:
+do {
+    // Código a ejecutar
+} while (condición);
+    
+Hace el bloque de código una sola vez al menos, y lo vuelve a repetir si se cumple la condición del while.
+
+
+
+2. BLOQUE SWITCH
+
+Como hemos dicho que el usuario elija una opción (1, 2, 3) pues usamos el switch para mantener un control de lo que quiere.
+El bucle Switch tiene dos manera de usarlas:
+
+Sentencia o Expresión: Para que se usara ese switch. Para una sentencia (algo como el if, un bucle while, etc) o para darle un valor a la variable donde estará ese switch
+En las expresion switch o switch de tipo expresion, se pone ";" despues de las llaves porque es como inicializar una variable.
+
+Dos puntos o flechas: Se pueden usar ambas aunque se distinguen en ciertos aspectos.
+
+Dos puntos: Estos se usan cuando vas a poner más de una instrucción sin necesidad de poner { las llaves }, finalizando con un break.
+    Este sigue todos los cases , es decir, si se cumple el primer case, seguirá el segundo, y el n case. Por eso hay que poner el break. El break rompe el código 
+    cuando se cumple el case, luego de esto sale del swwitch.
+
+        (Sentencia)                                                         (Expresion)
+    switch (prueba){                                                int variable = switch (prueba){         // es parecido a int variable = 1 ;  // 1 es el valor del switch
+        case 1:                                                         case 1: // codigo a ejecutar
+            // codigo a ejecutar                                        case 2: // codigo a ejecutar
+            break;                                                      break;
+    }                                                               };
+    // resto del codigo                                             // resto del codigo
+
+Flechas -> Se usan para dar instrucciones simples, de una línea, aunque también pueden serviar para más lineas si se usan { las llaves }. 
+    En este caso no es necesario un break.
+
+        (Sentencia - Sin llaves)                                            (Sentencia - con llaves)
+    switch (prueba){                                                switch (prueba){
+        case 1->  // codigo a ejecutar                                  case 1-> // codigo a ejecutar
+                                                                        case 2-> {
+                                                                        // codigo a ejecutar}
+    }                                                               }
+    // resto del codigo                                             // resto del codigo
+
