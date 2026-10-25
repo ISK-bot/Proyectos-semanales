@@ -1,45 +1,95 @@
 /* Ya es momento de crear un codigo funcional, que tenga una función.
 Mi objetivo es poder hacer algo parecido a los cajeros automáticos, con validación
 de PIN.
-
-Algo que quiero dejar para más tarde son los bucles, estos, aún no los hemos dado, por lo que para poder 
-hacer una buena validación de PIN debería esperar a dar los bucles.
 */
 
 import java.util.Scanner;
+import java.util.Random;
 
-public class Proy2 /*Proyecto2.java*/ {
+public class Proy2 /*Proyecto2.java*/{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Ingresa tu DNI(numeros): ");       // Deberemos ingresar los numeros de nuestro DNI. - Falta especificar el límite de caracteres de la entrada por teclado
-        int DNI = sc.nextInt().length(7);                   // Definimos la cantidad de "texto" que queremos que tenga la variable DNI
-        sc.nextLine();                                      // Limpiamos el buffer (con un salto de linea).
+        Random rand = new Random();
 
-        System.out.print("Ingresa la letra del DNI: ");     // Deberemos ingresar la letra de nuestro DNI.
-        char letra_DNI = sc.next().charAt(0);
-        System.out.println("Ingresa tu PIN: ");             // Ingresamos el PIN que usaremos.
+        System.out.print("Ingresa tu DNI: ");
+        int DNI = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Ingresa la letra de tu DNI: ");
+        char letra_DNI = sc.nextLine().charAt(0);
+        int numero_de_intentos = 3;
         int Pin1;
-        Pin1 = sc.nextInt();
-        System.out.println("Vuelve a ingresar tu pin: ");   // Confirmamos nuestro PIN.
         int Pin2;
-        Pin2 = sc.nextInt();
+        boolean Pin_igual;
 
+        do {                                            // BLOQUE DO-WHILE
+            System.out.println("Ingresa tu PIN: ");
+            Pin1 = sc.nextInt();
+            System.out.println("Confirma tu pin: ");
+            Pin2 = sc.nextInt();
+            Pin_igual = (Pin1 == Pin2);
+        } while(Pin1 != Pin2 && numero_de_intentos > 0);
 
-        if (Pin_igual) {
-        System.out.println("Pin registrado");               // Si son iguales, estará registrado como PIN
-        // Para hacerlo más interesante, si son iguales crearemos una variable, que sea ese PIN.
-        int PIN_identificador = Pin1;
+            if (Pin_igual) {
+            System.out.println("Pin registrado");
+                int valor_random = rand.nextInt(1000000)-100000;
+                if (valor_random > 0) {
+                    System.out.println("Tu saldo es: " + valor_random);
+                    System.out.println("Pulsa 1 para retirar dinero: ");
+                    System.out.println("Pulsa 2 para ingresar dinero: ");
+                    System.out.println("Pulsa 3 para hacer una transferencia: ");
+                    int opcion = sc.nextInt();
+
+                    switch (opcion) {                   // BLOQUE SWITCH
+                        case 1 : 
+                        System.out.println("Cuanto dinero quieres retirar: ");
+                        double retirar = sc.nextDouble();
+                        if (retirar < 0){
+                            System.out.println("No se puede transferir una cantidad negativa");
+                        } else {
+                            double resta = valor_random - retirar;
+                            System.out.println("Tu saldo actual es: " + resta);
+                        }
+                        break;
+
+                        case 2 :
+                        System.out.println("Cuanto dinero quieres ingresar: ");
+                        double ingresar = sc.nextDouble();
+                        if (ingresar < 0){
+                            System.out.println("No se puede transferir una cantidad negativa");
+                        } else {
+                            double suma = valor_random + ingresar;
+                            System.out.println("Tu saldo actual es: " + suma);
+                        }
+                        break;
+
+                        case 3 :
+                        System.out.println("Cuanto dinero quieres transferir: ");
+                        double transferir = sc.nextDouble();
+                        if (transferir < 0){
+                            System.out.println("No se puede transferir una cantidad negativa");
+                        } else {
+                            double resta2 = valor_random - transferir;
+                            System.out.println("Tu saldo actual es: " + resta2);
+                        }
+                        
+                        break;
+
+                        default : 
+                        System.out.println("Opción no válida, vuelva a intentarlo");
+                        break;
+                    }
+
+                } else {
+                    System.out.println("Tienes una deuda de: " + valor_random);
+                    System.out.println("¿Cuando podrás pagarla?");
+                    int random2 = rand.nextInt(31);
+                    System.out.println("Te quedan "+ random2 + " días para pagarla");
+                }
+                
+            }
+            else {
+                System.out.println("El Pin no es igual");  
+            }
             sc.close();
-        }
-        else {
-            System.out.println("El Pin no es igual");       // Si no son iguales, aparecerá este mensaje, diciendo que no son iguales. 
-        // Cuando metamos los bucles, haremos cosas más grandes.
-        }
-
     }
-
 }
-
-
-// Meter un do-while, y un math.random * -100000 hasta 100000. para que si eatas en negativo, salga estas en bancarota.
-// Sino un switch para decir, marca uno si es negativo marca 1 si es positivo. Si coinciden los valores negativo negativo sigue adelante, sino pues dice " mentiroso, sere una maquina pero no soy tonto".
